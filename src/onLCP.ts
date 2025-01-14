@@ -97,18 +97,7 @@ export const onLCP = (
         }
       });
 
-      // Stop listening after input. Note: while scrolling is an input that
-      // stops LCP observation, it's unreliable since it can be programmatically
-      // generated. See: https://github.com/GoogleChrome/web-vitals/issues/75
-      ['keydown', 'click'].forEach((type) => {
-        // Wrap in a setTimeout so the callback is run in a separate task
-        // to avoid extending the keyboard/click handler to reduce INP impact
-        // https://github.com/GoogleChrome/web-vitals/issues/383
-        addEventListener(type, () => whenIdle(stopListening), {
-          once: true,
-          capture: true,
-        });
-      });
+      setTimeout(() => whenIdle(stopListening), 0);
 
       onHidden(stopListening);
 
