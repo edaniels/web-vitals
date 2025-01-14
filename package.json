@@ -1,6 +1,6 @@
 {
   "name": "web-vitals-rx",
-  "version": "4.2.6",
+  "version": "4.2.7",
   "description": "Easily measure performance metrics in JavaScript",
   "type": "module",
   "typings": "dist/modules/index.d.ts",
