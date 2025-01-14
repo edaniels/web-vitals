@@ -97,8 +97,7 @@ export const onLCP = (
         }
       });
 
-      setTimeout(() => whenIdle(stopListening), 0);
-
+      whenIdle(stopListening);
       onHidden(stopListening);
 
       // Only report after a bfcache restore if the `PerformanceObserver`
